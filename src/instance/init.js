@@ -60,7 +60,10 @@ exports._init = function (options) {
 
   // set data after merge.
   this._data = options.data || {}
-
+  
+  // call init hook
+  this._callHook('init')
+    
   // initialize data observation and scope inheritance.
   this._initScope()
 

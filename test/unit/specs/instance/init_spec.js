@@ -41,7 +41,11 @@ describe('Instance Init', function () {
     expect(stub._initEvents).toHaveBeenCalled()
     expect(stub._initScope).toHaveBeenCalled()
   })
-
+  
+  it('should call created hook', function () {
+    expect(stub._callHook).toHaveBeenCalledWith('init')
+  })
+  
   it('should call created hook', function () {
     expect(stub._callHook).toHaveBeenCalledWith('created')
   })
